@@ -1,6 +1,6 @@
 port module Main exposing (..)
 
-import Debug exposing (log)
+-- import Debug exposing (log)
 import Browser
 import Html exposing (Html, text, div, h1, img, button)
 import Cmd.Extra exposing (withCmd, withNoCmd)
@@ -89,9 +89,6 @@ funnels =
 
 geolocationHandler : Geolocation.Response -> FunnelState -> Model -> ( Model, Cmd Msg )
 geolocationHandler response state model =
-    let
-        foo = (log "model2" response)
-    in
     case response of
         LocationResponse location ->
 
@@ -146,7 +143,7 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         GetGeoLocation ->
-            (log "model" model)
+            model
                 |> withCmd
                     (send Geolocation.now)
         Process value ->
@@ -170,7 +167,7 @@ update msg model =
         ReverseGeoResult httpRes ->
             case httpRes of
                 Err err ->
-                    (log "http error" ( model, Cmd.none ))
+                    ( model, Cmd.none )
                 Ok newCity ->
                     { model | city = Just newCity } |> withNoCmd
 
