@@ -29,6 +29,6 @@ before_script:
   - unzip -qq gradle-3.5-bin.zip
   - export GRADLE_HOME=$PWD/gradle-3.5
   - export PATH=$GRADLE_HOME/bin:$PATH
-  - git clone https://github.com/flutter/flutter.git -b alpha --depth 1
+  - git clone https://github.com/flutter/flutter.git -b v1.5.4-hotfixes --depth 1
 script:
   - ./flutter/bin/flutter -v build apk
