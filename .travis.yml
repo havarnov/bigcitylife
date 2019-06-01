@@ -24,13 +24,12 @@ addons:
     packages:
       - libstdc++6
       - fonts-droid
-before_install:
-  - yes | sdkmanager "platforms;android-28"
 before_script:
   - wget http://services.gradle.org/distributions/gradle-3.5-bin.zip
   - unzip -qq gradle-3.5-bin.zip
   - export GRADLE_HOME=$PWD/gradle-3.5
   - export PATH=$GRADLE_HOME/bin:$PATH
+  - yes | sdkmanager "platforms;android-28"
   - git clone https://github.com/flutter/flutter.git -b v1.5.4-hotfixes --depth 1
 script:
   - ./flutter/bin/flutter -v build apk
