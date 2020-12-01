@@ -23,9 +23,6 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
-    - name: Install dependencies
-      run: dotnet restore
-    
     - name: Build
       run: dotnet build --configuration Release --output ./output src/bigcitylife/bigcitylife.csproj
 
