@@ -1,0 +1,39 @@
+name: deploy dotnet azure function app
+env:
+  AZURE_FUNCTIONAPP_NAME: bigcitylife  # set this to your application's name
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'    # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '3.1.301'
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    
+    - name: Install dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --configuration Release --output ./output
+
+    - name: Azure Functions Action
+      uses: Azure/functions-action@v1.1.8
+      with:
+        # Name of the Azure Function App
+        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+        # Path to package or folder. *.zip or a folder to deploy
+        package: ./output
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
