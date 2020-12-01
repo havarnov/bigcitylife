@@ -1,38 +1,38 @@
-using System;
-using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace BigCityLife
 {
-    public static class SignalRChatFunction
+    public class SignalRChatFunction: ServerlessHub
     {
         [FunctionName("negotiate")]
-        public static SignalRConnectionInfo GetSignalRInfo(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
-            [SignalRConnectionInfo(HubName = "chat")] SignalRConnectionInfo connectionInfo)
+        public SignalRConnectionInfo Negotiate([HttpTrigger(AuthorizationLevel.Anonymous)]HttpRequest req)
         {
-            return connectionInfo;
+            return Negotiate(req.Headers["x-ms-signalr-user-id"], GetClaims(req.Headers["Authorization"]));
         }
 
-        [FunctionName("messages")]
-        public static Task SendMessage(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] object message,
-            [SignalR(HubName = "chat")] IAsyncCollector<SignalRMessage> signalRMessages)
+        [FunctionName(nameof(OnConnected))]
+        public async Task OnConnected([SignalRTrigger]InvocationContext invocationContext, ILogger logger)
         {
-            return signalRMessages.AddAsync(
-                new SignalRMessage
-                {
-                    Target = "newMessage",
-                    Arguments = new[] { message }
-                });
+            await Clients.All.SendAsync("new-connection", invocationContext.ConnectionId);
+            logger.LogInformation($"{invocationContext.ConnectionId} has connected");
+        }
+
+        [FunctionName(nameof(Broadcast))]
+        public async Task Broadcast([SignalRTrigger]InvocationContext invocationContext, string message, ILogger logger)
+        {
+            await Clients.All.SendAsync("new-message", message);
+            logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
+        }
+
+        [FunctionName(nameof(OnDisconnected))]
+        public void OnDisconnected([SignalRTrigger]InvocationContext invocationContext)
+        {
         }
     }
 }
