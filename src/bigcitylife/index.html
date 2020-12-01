@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.0/signalr.js"></script>
+		<script type="text/javascript">
+			// const apiBaseUrl = "http://localhost:7071";
+			const apiBaseUrl = "https://bigcitylife.azurewebsites.net";
+
+			async function getConnectionInfo() {
+				let resp = await fetch(`${apiBaseUrl}/api/negotiate`, {method: "POST"});
+				return resp.json();
+			}
+
+			async function start() {
+				const options = {
+				};
+
+				const connection = new signalR.HubConnectionBuilder()
+						.withUrl(`${apiBaseUrl}/api`, options)
+						.configureLogging(signalR.LogLevel.Information)
+						.build();
+
+				connection.on("newMessage", msg => console.log(msg));
+
+				await connection.start()
+						.then(() => console.log('connected!'))
+						.catch(console.error);
+
+				return connection;
+			}
+
+			document.addEventListener('DOMContentLoaded', async () => {
+				document.signalRConnection = await start();
+			}, false);
+
+		</script>
+	</head>
+	<body>
+		<h1>hei</h1>
+	</body>
+</html>
