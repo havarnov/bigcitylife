@@ -13,42 +13,49 @@ namespace BigCityLife
         [FunctionName("negotiate")]
         public SignalRConnectionInfo Negotiate([HttpTrigger(AuthorizationLevel.Anonymous)]HttpRequest req, ILogger logger)
         {
-            logger.LogInformation("negotiating new connection.");
-            return Negotiate(req.Headers["x-ms-signalr-user-id"]);
+            // TODO: figure out what to do about 'x-ms-signalr-user-id' and JWT bearer
+            // return Negotiate(req.Headers["x-ms-signalr-user-id"], GetClaims(req.Headers["Authorization"]));
+            return Negotiate();
         }
 
         [FunctionName(nameof(OnConnected))]
         public async Task OnConnected([SignalRTrigger]InvocationContext invocationContext, ILogger logger)
         {
-            await Clients.All.SendAsync("newConnection", invocationContext.ConnectionId);
-            logger.LogInformation($"{invocationContext.ConnectionId} has connected");
+            logger.LogInformation($"{invocationContext.ConnectionId} has connected.");
+            await Task.CompletedTask;
         }
 
-        [FunctionName(nameof(Broadcast))]
-        public async Task Broadcast([SignalRTrigger]InvocationContext invocationContext, string message, ILogger logger)
+        public class JoinGroupChatMessage
         {
-            await Clients.All.SendAsync("newMessage", $"{invocationContext.ConnectionId} broadcast {message}");
-            logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
+            public string Name { get; set; }
         }
 
-        public class BroadcastMessage
+        [FunctionName(nameof(JoinGroupChat))]
+        public async Task JoinGroupChat([SignalRTrigger]InvocationContext invocationContext, JoinGroupChatMessage message, ILogger logger)
         {
-            public string Value { get; set; }
-            public string Sender { get; set; }
+            await Groups.AddToGroupAsync(invocationContext.UserId, message.Name);
+            logger.LogInformation($"{invocationContext.ConnectionId} joined the group chat {message.Name}.");
         }
 
-        [FunctionName(nameof(BroadcastJson))]
-        public async Task BroadcastJson([SignalRTrigger]InvocationContext invocationContext, BroadcastMessage message, ILogger logger)
+        public class GroupChatMessage
         {
-            await Clients.All.SendAsync(
-                "newMessage",
-                $"{invocationContext.ConnectionId} broadcast {message.Value} from {message.Sender}");
-            logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
+            public string ChatName { get; set; }
+
+            public string Message { get; set; }
+        }
+
+        [FunctionName(nameof(SendToGroupChat))]
+        public async Task SendToGroupChat([SignalRTrigger]InvocationContext invocationContext, GroupChatMessage message, ILogger logger)
+        {
+            await Clients.Group(message.ChatName).SendAsync("newMessage", message.Message);
+            logger.LogInformation($"{invocationContext.ConnectionId} sent group chat message {message.Message} to {message.ChatName}.");
         }
 
         [FunctionName(nameof(OnDisconnected))]
-        public void OnDisconnected([SignalRTrigger]InvocationContext invocationContext)
+        public async Task OnDisconnected([SignalRTrigger]InvocationContext invocationContext, ILogger logger)
         {
+            logger.LogInformation($"{invocationContext.ConnectionId} has disconnected.");
+            await Task.CompletedTask;
         }
     }
 }
