@@ -31,6 +31,21 @@ namespace BigCityLife
             logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
         }
 
+        public class BroadcastMessage
+        {
+            public string Value { get; set; }
+            public string Sender { get; set; }
+        }
+
+        [FunctionName(nameof(BroadcastJson))]
+        public async Task BroadcastJson([SignalRTrigger]InvocationContext invocationContext, BroadcastMessage message, ILogger logger)
+        {
+            await Clients.All.SendAsync(
+                "newMessage",
+                $"{invocationContext.ConnectionId} broadcast {message.Value} from {message.Sender}");
+            logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
+        }
+
         [FunctionName(nameof(OnDisconnected))]
         public void OnDisconnected([SignalRTrigger]InvocationContext invocationContext)
         {
