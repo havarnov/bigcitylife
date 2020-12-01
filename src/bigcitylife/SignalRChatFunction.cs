@@ -27,7 +27,7 @@ namespace BigCityLife
         [FunctionName(nameof(Broadcast))]
         public async Task Broadcast([SignalRTrigger]InvocationContext invocationContext, string message, ILogger logger)
         {
-            await Clients.All.SendAsync("newMessage", message);
+            await Clients.All.SendAsync("newMessage", $"{invocationContext.ConnectionId} broadcast {message}");
             logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
         }
 
