@@ -11,22 +11,23 @@ namespace BigCityLife
     public class SignalRChatFunction: ServerlessHub
     {
         [FunctionName("negotiate")]
-        public SignalRConnectionInfo Negotiate([HttpTrigger(AuthorizationLevel.Anonymous)]HttpRequest req)
+        public SignalRConnectionInfo Negotiate([HttpTrigger(AuthorizationLevel.Anonymous)]HttpRequest req, ILogger logger)
         {
-            return Negotiate(req.Headers["x-ms-signalr-user-id"], GetClaims(req.Headers["Authorization"]));
+            logger.LogInformation("negotiating new connection.");
+            return Negotiate(req.Headers["x-ms-signalr-user-id"]);
         }
 
         [FunctionName(nameof(OnConnected))]
         public async Task OnConnected([SignalRTrigger]InvocationContext invocationContext, ILogger logger)
         {
-            await Clients.All.SendAsync("new-connection", invocationContext.ConnectionId);
+            await Clients.All.SendAsync("newConnection", invocationContext.ConnectionId);
             logger.LogInformation($"{invocationContext.ConnectionId} has connected");
         }
 
         [FunctionName(nameof(Broadcast))]
         public async Task Broadcast([SignalRTrigger]InvocationContext invocationContext, string message, ILogger logger)
         {
-            await Clients.All.SendAsync("new-message", message);
+            await Clients.All.SendAsync("newMessage", message);
             logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
         }
 
