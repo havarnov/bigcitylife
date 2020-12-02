@@ -33,7 +33,7 @@ namespace BigCityLife
         [FunctionName(nameof(JoinGroupChat))]
         public async Task JoinGroupChat([SignalRTrigger]InvocationContext invocationContext, JoinGroupChatMessage message, ILogger logger)
         {
-            await Groups.AddToGroupAsync(invocationContext.UserId, message.Name);
+            await Groups.AddToGroupAsync(invocationContext.ConnectionId, message.Name);
             logger.LogInformation($"{invocationContext.ConnectionId} joined the group chat {message.Name}.");
         }
 
@@ -47,7 +47,7 @@ namespace BigCityLife
         [FunctionName(nameof(SendToGroupChat))]
         public async Task SendToGroupChat([SignalRTrigger]InvocationContext invocationContext, GroupChatMessage message, ILogger logger)
         {
-            await Clients.Group(message.ChatName).SendAsync("newMessage", message.Message);
+            await Clients.Group(message.ChatName).SendAsync("newMessage", message);
             logger.LogInformation($"{invocationContext.ConnectionId} sent group chat message {message.Message} to {message.ChatName}.");
         }
 
