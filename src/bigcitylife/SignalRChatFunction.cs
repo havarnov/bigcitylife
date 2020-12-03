@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SignalR;
@@ -15,7 +16,14 @@ namespace BigCityLife
         {
             // TODO: figure out what to do about 'x-ms-signalr-user-id' and JWT bearer
             // return Negotiate(req.Headers["x-ms-signalr-user-id"], GetClaims(req.Headers["Authorization"]));
-            return Negotiate();
+            if (req.Headers.ContainsKey("x-ms-signalr-user-id"))
+            {
+                return Negotiate(userId: req.Headers["x-ms-signalr-user-id"]);
+            }
+            else
+            {
+                return Negotiate();
+            }
         }
 
         [FunctionName(nameof(OnConnected))]
@@ -47,7 +55,7 @@ namespace BigCityLife
         [FunctionName(nameof(SendToGroupChat))]
         public async Task SendToGroupChat([SignalRTrigger]InvocationContext invocationContext, GroupChatMessage message, ILogger logger)
         {
-            await Clients.Group(message.ChatName).SendAsync("newMessage", message);
+            await Clients.Group(message.ChatName).SendAsync("newMessage", invocationContext.UserId ?? "N/A", message);
             logger.LogInformation($"{invocationContext.ConnectionId} sent group chat message {message.Message} to {message.ChatName}.");
         }
 
