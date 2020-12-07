@@ -2,8 +2,8 @@
 	<head>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.0/signalr.js"></script>
 		<script type="text/javascript">
-			// const apiBaseUrl = "http://localhost:7071";
-			const apiBaseUrl = "https://bigcitylife.azurewebsites.net";
+			const apiBaseUrl = "http://localhost:7071";
+			// const apiBaseUrl = "https://bigcitylife.azurewebsites.net";
 
 			async function getConnectionInfo() {
 				let resp = await fetch(`${apiBaseUrl}/api/negotiate`, {method: "POST"});
