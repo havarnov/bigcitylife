@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		736EB7B92573D2E00011A5C2 /* BigCityLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736EB7B82573D2E00011A5C2 /* BigCityLifeApp.swift */; };
+		736EB7BB2573D2E00011A5C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736EB7BA2573D2E00011A5C2 /* ContentView.swift */; };
+		736EB7BD2573D2E10011A5C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736EB7BC2573D2E10011A5C2 /* Assets.xcassets */; };
+		736EB7C02573D2E10011A5C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736EB7BF2573D2E10011A5C2 /* Preview Assets.xcassets */; };
+		ECFE5FFE4F56EB1A9E0A7704 /* Pods_Big_City_Life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E664932FE7624CB77A0BB6D /* Pods_Big_City_Life.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E664932FE7624CB77A0BB6D /* Pods_Big_City_Life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_City_Life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		736EB7B52573D2E00011A5C2 /* Big City Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big City Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		736EB7B82573D2E00011A5C2 /* BigCityLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCityLifeApp.swift; sourceTree = "<group>"; };
+		736EB7BA2573D2E00011A5C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		736EB7BC2573D2E10011A5C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		736EB7BF2573D2E10011A5C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		736EB7C12573D2E10011A5C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8E69C1E404AC114299D5A7F /* Pods-Big City Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big City Life.debug.xcconfig"; path = "Target Support Files/Pods-Big City Life/Pods-Big City Life.debug.xcconfig"; sourceTree = "<group>"; };
+		F6D17C521A90A970C3BD4FB4 /* Pods-Big City Life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big City Life.release.xcconfig"; path = "Target Support Files/Pods-Big City Life/Pods-Big City Life.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		736EB7B22573D2E00011A5C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFE5FFE4F56EB1A9E0A7704 /* Pods_Big_City_Life.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		123922DF2131CB0B680EFF56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8E69C1E404AC114299D5A7F /* Pods-Big City Life.debug.xcconfig */,
+				F6D17C521A90A970C3BD4FB4 /* Pods-Big City Life.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		736EB7AC2573D2E00011A5C2 = {
+			isa = PBXGroup;
+			children = (
+				736EB7B72573D2E00011A5C2 /* Big City Life */,
+				736EB7B62573D2E00011A5C2 /* Products */,
+				123922DF2131CB0B680EFF56 /* Pods */,
+				7CE9092E51914C457F832F28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		736EB7B62573D2E00011A5C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				736EB7B52573D2E00011A5C2 /* Big City Life.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		736EB7B72573D2E00011A5C2 /* Big City Life */ = {
+			isa = PBXGroup;
+			children = (
+				736EB7B82573D2E00011A5C2 /* BigCityLifeApp.swift */,
+				736EB7BA2573D2E00011A5C2 /* ContentView.swift */,
+				736EB7BC2573D2E10011A5C2 /* Assets.xcassets */,
+				736EB7C12573D2E10011A5C2 /* Info.plist */,
+				736EB7BE2573D2E10011A5C2 /* Preview Content */,
+			);
+			path = "Big City Life";
+			sourceTree = "<group>";
+		};
+		736EB7BE2573D2E10011A5C2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				736EB7BF2573D2E10011A5C2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7CE9092E51914C457F832F28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E664932FE7624CB77A0BB6D /* Pods_Big_City_Life.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		736EB7B42573D2E00011A5C2 /* Big City Life */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 736EB7C42573D2E10011A5C2 /* Build configuration list for PBXNativeTarget "Big City Life" */;
+			buildPhases = (
+				427A041C4DAC95296C9CFE01 /* [CP] Check Pods Manifest.lock */,
+				736EB7B12573D2E00011A5C2 /* Sources */,
+				736EB7B22573D2E00011A5C2 /* Frameworks */,
+				736EB7B32573D2E00011A5C2 /* Resources */,
+				3477CA619960656D5126CD54 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Big City Life";
+			productName = "Big City Life";
+			productReference = 736EB7B52573D2E00011A5C2 /* Big City Life.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		736EB7AD2573D2E00011A5C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					736EB7B42573D2E00011A5C2 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 736EB7B02573D2E00011A5C2 /* Build configuration list for PBXProject "Big City Life" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 736EB7AC2573D2E00011A5C2;
+			productRefGroup = 736EB7B62573D2E00011A5C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				736EB7B42573D2E00011A5C2 /* Big City Life */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		736EB7B32573D2E00011A5C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				736EB7C02573D2E10011A5C2 /* Preview Assets.xcassets in Resources */,
+				736EB7BD2573D2E10011A5C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3477CA619960656D5126CD54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Big City Life/Pods-Big City Life-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Big City Life/Pods-Big City Life-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Big City Life/Pods-Big City Life-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		427A041C4DAC95296C9CFE01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Big City Life-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		736EB7B12573D2E00011A5C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				736EB7BB2573D2E00011A5C2 /* ContentView.swift in Sources */,
+				736EB7B92573D2E00011A5C2 /* BigCityLifeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		736EB7C22573D2E10011A5C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		736EB7C32573D2E10011A5C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		736EB7C52573D2E10011A5C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8E69C1E404AC114299D5A7F /* Pods-Big City Life.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "\"Big City Life/Preview Content\"";
+				DEVELOPMENT_TEAM = SQV337Z4MQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Big City Life/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "havarnov.Big-City-Life";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		736EB7C62573D2E10011A5C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6D17C521A90A970C3BD4FB4 /* Pods-Big City Life.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "\"Big City Life/Preview Content\"";
+				DEVELOPMENT_TEAM = SQV337Z4MQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Big City Life/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "havarnov.Big-City-Life";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		736EB7B02573D2E00011A5C2 /* Build configuration list for PBXProject "Big City Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				736EB7C22573D2E10011A5C2 /* Debug */,
+				736EB7C32573D2E10011A5C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		736EB7C42573D2E10011A5C2 /* Build configuration list for PBXNativeTarget "Big City Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				736EB7C52573D2E10011A5C2 /* Debug */,
+				736EB7C62573D2E10011A5C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 736EB7AD2573D2E00011A5C2 /* Project object */;
+}
