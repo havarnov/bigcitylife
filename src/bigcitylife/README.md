@@ -16,7 +16,8 @@ See: https://github.com/Azure/azure-signalr/issues/969
 dotnet new tool-manifest
 
 # find the latest version
-dotnet tool install Microsoft.Azure.SignalR.Emulator --version  1.0.0-preview1-10686 --add-source https://www.myget.org/F/azure-signalr-dev/api/v3/index.json
+# https://www.nuget.org/packages/Microsoft.Azure.SignalR.Emulator
+dotnet tool install Microsoft.Azure.SignalR.Emulator --version 1.0.0-preview1-10785
 
 dotnet tool run asrs-emulator upstream init
 

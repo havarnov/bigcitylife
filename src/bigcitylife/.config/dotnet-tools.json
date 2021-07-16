@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "microsoft.azure.signalr.emulator": {
+      "version": "1.0.0-preview1-10785",
+      "commands": [
+        "asrs-emulator"
+      ]
+    }
+  }
+}
