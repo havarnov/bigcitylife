@@ -6,3 +6,5 @@ local.settings.json
 .idea/
 
 .DS_Store
+
+.env*
