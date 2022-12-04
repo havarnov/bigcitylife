@@ -161,7 +161,7 @@ class ContentViewModel: ObservableObject, HubConnectionDelegate {
   
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
-        signalRService = SignalRService(url: URL(string: "https://bigcitylife.azurewebsites.net/api")!, hubConnectionDelegate: self, onMessageReceived: self.onMessageReceived)
+        signalRService = SignalRService(url: URL(string: "https://bigcitylife.fly.dev/chat")!, hubConnectionDelegate: self, onMessageReceived: self.onMessageReceived)
         locationManager.onStatusChanged = self.onStatusChanged
         locationManager.onPlacemarkChanged = self.onPlacemarkChanged
     }
@@ -198,7 +198,8 @@ class ContentViewModel: ObservableObject, HubConnectionDelegate {
     }
     
     public func onPlacemarkChanged(placemark: CLPlacemark?) -> Void {
-        if self.placemark == placemark || (self.placemark != nil && placemark == nil) {
+        let newPlacement = "\(placemark?.locality ?? "")::\(placemark?.country ?? "")"
+        if getChatName() == newPlacement || (self.placemark != nil && placemark == nil) {
             return
         }
         
